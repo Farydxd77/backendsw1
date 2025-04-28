@@ -27,7 +27,11 @@ class Server {
         // Desplegar el directorio público
         this.app.use( express.static( path.resolve( __dirname, '../public' ) ) );
 
-        this.app.use( cors() );
+        this.app.use(cors({
+            origin: '*',              // Permite cualquier origen
+            methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+            allowedHeaders: ['Content-Type', 'Authorization']
+          }));
         //TODO: CORS
         this.app.use( express.json() )
         // API ENDPoints
