@@ -21,7 +21,7 @@ const UsuarioSchema = Schema({
         default: false,
     }
 
-});
+}); 
 
 
 UsuarioSchema.method('toJSON', function() {
