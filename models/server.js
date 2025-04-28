@@ -28,9 +28,9 @@ class Server {
         this.app.use( express.static( path.resolve( __dirname, '../public' ) ) );
 
         this.app.use(cors({
-            origin: '*',              // Permite cualquier origen
+            origin: '*',  // O especifica los orígenes permitidos
             methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-            allowedHeaders: ['Content-Type', 'Authorization']
+            allowedHeaders: ['Content-Type', 'Authorization', 'x-token']  // Agrega 'x-token' aquí
           }));
         //TODO: CORS
         this.app.use( express.json() )
